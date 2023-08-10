@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+html{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 30px;
+    min-height: 38rem;
+    max-width: 60rem;
+
+}
+
+.main{
+    padding: 3rem 7rem 3rem 0rem
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-position-x: -35rem;
+    background-position-y: -15rem;
+}
+.image-container .woman{
+    transform: translateX(-5rem);
+}
+
+.image-container .box{
+    position: absolute;
+    display: flex;
+    align-self: center;
+    transform: translateX(-6rem) translateY(2.5rem);
+}
+
+
+h1{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+ul{
+    list-style: none;
+    padding: 0;
+
+}
+
+.question{
+    width: 100%;    
+    padding: 1em 0 1em 0;
+    border-bottom: solid hsl(240, 5%, 91%)1px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+.question:hover > :not(p){
+    color: hsl(14, 88%, 65%);
+}
+
+.question.active{
+    font-weight: 700;
+}
+
+.question.active .title i{
+    transition: 0.5s;
+    transform: rotateX(3.142rad)
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+i{
+    transition: 0.5s;
+    content: url("./images/icon-arrow-down.svg");
+}
+
+.answer{
+    overflow: hidden;
+    max-height: 0;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    transition: max-height 0.6s ease-out;
+    width: 95%;
+    color: hsl(240, 6%, 50%);
+    align-self: baseline;
+
+
+}
+
+.question.active .answer{
+    max-height: 5rem;
+    transition: max-height 0.6s ease-out;
+}
+
+
+@media only screen and (max-width: 833px) {
+    h1{
+        margin: 0;
+    }
+    body{
+        padding-top: 2rem;
+    }
+    .container{
+        min-height: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main{
+        min-height: 30rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        align-items: center;
+    }
+    .question{
+        width: 95%;
+    }
+
+    .image-container {
+        position: relative;
+        height: 7rem;
+        justify-content: center;
+        background-image: url("./images/bg-pattern-mopbile.svg");
+        background-repeat: no-repeat;
+    }
+    .image-container .woman{
+        content: url("./images/illustration-woman-online-mobile.svg");
+        width: 80%;
+        transform: none;
+        transform: translateY(-5rem);
+    }
+    
+    .image-container .box{
+        display: none;
+    }
+    
+}
